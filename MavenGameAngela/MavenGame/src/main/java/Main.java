@@ -19,7 +19,7 @@ public class Main {
     static int redBullCounter = 0;
     static int score = 0;
     static boolean clearScreen = false;
-    static Character menuChoice;
+    static Character menuChoice = 0;
     static KeyStroke keyStroke;
     static boolean go;
     static boolean inMenu = true;
@@ -40,18 +40,17 @@ public class Main {
 
         terminal.setCursorVisible(false);
 
-        do {
+        while(inMenu) {
             PrintMenu.printMenu();
-            if (menuChoice != null) {
 
-                if (menuChoice == '\n') {
-                    terminal.clearScreen();
-                    go = true;
-                    inMenu = false;
-                }
+            if (menuChoice == '\n') {
+                terminal.clearScreen();
+                go = true;
+                inMenu = false;
+
             }
+        }
 
-        } while (inMenu);
 
 
         Player playa = new Player(40, 12);
@@ -261,8 +260,19 @@ public class Main {
 
                     Print.print(terminal, "Game over", 36, 12);
                     Print.print(terminal, "Score: " + score, 36, 13);
+//                    Print.print(terminal, "Press any key to start again!", 30,15);
+
+//                    keyStroke = null;
+//                    keyStroke = terminal.readInput();
+//                    if (keyStroke != null) {
+//                        go = true;
+//                    }
+
+
                     terminal.setCursorPosition(pxOld, pyOld);
                     terminal.putCharacter(' ');
+
+
                     go = false;
 
 

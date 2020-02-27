@@ -14,7 +14,7 @@ public class PrintMenu {
         Print.print(Main.terminal, "------CLUB SLEAZERS-----", 28, 8);
         Main.terminal.setForegroundColor(TextColor.ANSI.MAGENTA);
 //        Main.terminal.setBackgroundColor(TextColor.ANSI.BLUE);
-        Print.print(Main.terminal, "1 start new game", 32, 10);
+        Print.print(Main.terminal, "Press ENTER to start new game", 26, 10);
         Main.terminal.setForegroundColor(TextColor.ANSI.GREEN);
         Print.print(Main.terminal, "------Instructions-----", 28, 13);
         Print.print(Main.terminal, "You are in a club, and you just want to dance...", 5, 14);
